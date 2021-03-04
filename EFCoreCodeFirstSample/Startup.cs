@@ -1,4 +1,6 @@
 using EFCoreCodeFirstSample.Models;
+using EFCoreCodeFirstSample.Models.DataManager;
+using EFCoreCodeFirstSample.Models.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +30,7 @@ namespace EFCoreCodeFirstSample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<RepositoryContext>(opts => opts.UseSqlServer(Configuration["ConnectionString:EmployeeDB"]));
+            services.AddScoped<IDataRepository<Employee>, EmployeeManager>();
             services.AddControllers();
         }
 
