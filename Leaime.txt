@@ -1,0 +1,7 @@
+Tutorial: https://code-maze.com/net-core-web-api-ef-core-code-first/
+
+Migration commands:
+add-migration migrationname
+update-database or update-database migrationname
+remove-migration
+script-migration
